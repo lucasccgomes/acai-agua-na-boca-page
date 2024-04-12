@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Agua na Boca</title>
+    <!--- Define o ícone do site (favicon)-->
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/fontawesome.css" />
+    <link rel="stylesheet" href="./css/animate.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/responsivo.css" />
+
+</head>
+
+<body class="no-select">
+
+    <div class="container-mensagens" id="container-mensagens">
+
+    </div>
+
+    <a class="botao-carrinho animated bounceIn hidden" onclick="cardapio.metodos.abrirCarrinho(true);">
+        <div class="badge-total-carrinho">0</div>
+        <i class="fa fa-shopping-bag"></i>
+    </a>
+
+    <section class="header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg pl-0 pr-0 col-one">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
+                    <span class="navbar-toggler-icon">
+                        <i class="fas fa-bars"></i>
+                    </span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ml-auto mr-auto wow zoomIn">
+
+                        <li class="nav-item"><a href="#cardapio" class="nav-link"><b>Cardápio</b></a></li>
+                        <li class="nav-item"><a href="#sobre" class="nav-link"><b>Sobre Nós</b></a></li>
+
+                    </ul>
+
+                    <!-- CARRINHOOD -->
+                    <!-- 
+                        <a class="btn btn-white btn-icon wow zoomIn" onclick="cardapio.metodos.abrirCarrinho(false);">
+
+                        Meu Carrinho <span class="icon">
+                            <div class="container-total-carrinho badge-total-carrinho hidden">0</div>
+                            <i class="fa fa-shopping-bag"></i>
+                        </span>
+                        </a>
+                    -->
+                </div>
+            </nav>
+
+        </div>
+
+    </section>
+
+    <section class="banner">
+
+        <div class="container">
+            <div class="logo-center">
+                <a class="navbar-brand wow zoomIn" href="#">
+                    <img src="./img/logo.png" width="250" class="img-logo" />
+                </a>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-one">
+                    <div class="d-flex text-banner">
+                        <h1 class="wow fadeInLeft">
+                            <b>
+                                Sinta a energia da natureza com nosso
+                                <b class="color-primary">
+                                    Acaí
+                                </b>
+                                autêntico!
+                            </b>
+                        </h1>
+                        <p class="wow fadeInLeft delay-02s">
+                            Explore nosso cardápio e saboreie sua escolha no aconchego do seu lar!
+                        </p>
+                        <div class="wow fadeIn delay-05s">
+                            <a class="btn btn-sm btn-white btn-social mt-4 mr-3"
+                                href="https://www.instagram.com/acaiaguanaboc" target="_blank">
+                                <i class="fab fa-instagram social-icon"
+                                    data-tooltip="Veja nosso instagram @acaiaguanaboc"></i>
+                            </a>
+                            <a class="btn btn-sm btn-white btn-social mt-4 mr-3"
+                                href="https://maps.app.goo.gl/i7ERwp32BrTE8ncB9" target="_blank">
+                                <i class="fas fab fa-map-marked-alt social-icon" data-tooltip="Onde Estamos "></i>
+                            </a>
+                            <a href="https://wa.me/5518996123342?text=Ol%C3%A1%20gostaria%20de%20fazer%20um%20pedido."
+                                class="btn btn-sm btn-white btn-social mt-4 botao-whatsapp" target="_blank">
+                                <i class="fab fa-whatsapp social-icon"
+                                    data-tooltip="Chame no Whatsapp para um pedido.."></i>
+                            </a>
+
+                            <a class="btn btn-purple mt-4 mr-3" target="_blank"
+                                href="https://wa.me/5518996123342?text=Ol%C3%A1%20gostaria%20de%20fazer%20um%20pedido.">
+                                Fazer pedido
+                            </a>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-6 no-mobile">
+                    <div class="card-banner wow fadeIn delay-02s"></div>
+                    <div class="d-flex img-banner wow fadeIn delay-03s">
+                        <img src="./img/copo-01.png" width="15" alt="">
+                    </div>
+
+                    <div class="card card-case">
+                        "O açaí mais saboroso da região! "
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="cardapio" id="cardapio">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12 col-one text-center mb-12 wow fadeIn">
+                    <span class="hint-title"><b>Cardápio</b></span>
+                    <h1 class="title">
+                        <b>Conheça o nosso cardápio</b>
+                    </h1>
+                    <p>Clique na imgem para baixar o cardápio</p>
+                </div>
+
+                <div class="col-12 container-menu wow fadeInUp centerMenuCp">
+                    <a id="menu-cardapio-geral" class="btn btn-white btn-sm-2 mr-3 active"
+                        onclick="cardapio.metodos.obterItensCardapio('cardapio-geral')">
+                        <div class="icon-creme"></div> Cardápio - 1
+
+                    </a>
+
+                    <a id="menu-acai-vitamina" class="btn btn-white btn-sm-2 mr-3"
+                        onclick="cardapio.metodos.obterItensCardapio('acai-vitamina')">
+                        <div class="icon-vitamina"></div> Cardápio - 2
+
+                    </a>
+
+                    <a id="menu-milk-shake" class="btn btn-white btn-sm-2 mr-3 "
+                        onclick="cardapio.metodos.obterItensCardapio('milk-shake')">
+                        <div class="icon-milkshake"></div> Adicionais
+
+                    </a>
+
+                </div>
+
+                <div class="col-12 itensCardapioCenter">
+                    <div class="row" id="itensCardapio">
+                        <!-- Aqui vão ser gerados os itens do Cardápio-->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <section class="sobre col-one wow fadeInUp delay-05s" id="sobre">
+        <div class="container">
+            <div class="row">
+                <div class="col-5 no-mobile text-center">
+                    <div class="card-sobre"></div>
+                    <div class="d-flex img-banner">
+                        <img class="img-sobre" src="./img/acai-sobre.webp" alt="">
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-7">
+
+
+                    <div class="text-center">
+                        <span class="hint-title"><b>Sobre Nós</b></span>
+                        <h1 class="title">
+                            <b>Quem somos?</b>
+                        </h1>
+                    </div>
+                    <div class="mb-5">
+                        <p class="paragrafo-sobre">Na Açaí Água na Boca, nossa paixão é garantir que você desfrute da
+                            melhor experiência com açaí, no conforto de sua casa. Inaugurada em 2018 em Parapuã,
+                            interior de São Paulo, nossa açaiteria foi criada com um propósito claro: oferecer açaí de
+                            altíssima qualidade através de um serviço de entrega ágil e confiável.</p>
+
+                        <p class="paragrafo-sobre">Desde os nossos primeiros dias, quando nosso fundador iniciou essa
+                            jornada aos 22 anos, focamos em cultivar uma relação próxima com nossos clientes, mesmo à
+                            distância. Cada pedido é preparado com atenção aos detalhes, usando ingredientes sempre
+                            frescos e selecionados para garantir uma experiência deliciosa e nutritiva.</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-3 col-md-3 col-sm-12 container-logo-footer wow zoomIn">
+                    <img class="logo-footer" src="./img/logo.png" alt="">
+                </div>
+
+                <div class="col-12 col-lg-6 col-md-3 col-sm-12 container-texto-footer">
+                    <p class="mb-0">
+                        <br>
+                        <b>
+                            Cardápio Online - Açaiteria Agua na Boca
+                        </b>
+                        <br>
+                        &copy; Todos os direitos reservados
+                        <br>
+                        <b>
+                            Desenvolvido por:
+                        </b>
+                        Dev Log - Lucas Oliveira Gomes
+                    </p>
+                </div>
+
+                <div class="col-12 col-lg-3 col-md-3 col-sm-12 container-redes-footer wow zoomIn">
+                    <a class="btn btn-sm btn-white btn-social mr-3" href="https://www.instagram.com/acaiaguanaboc"
+                        target="_blank">
+                        <i class="fab fa-instagram social-icon" data-tooltip="Veja nosso instagram @acaiaguanaboc"></i>
+                    </a>
+                    <a class="btn btn-sm btn-white btn-social mr-3" href="https://maps.app.goo.gl/i7ERwp32BrTE8ncB9"
+                        target="_blank">
+                        <i class="fas fab fa-map-marked-alt social-icon" data-tooltip="Onde Estamos "></i>
+                    </a>
+                    <a class="btn btn-sm btn-white btn-social botao-whatsapp" href="#" target="_blank">
+                        <i class="fab fa-whatsapp social-icon" data-tooltip="Chame no Whatsapp para um pedido.."></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal-full animated hidden" id="modalCarrinho">
+        <div class="m-header">
+            <div class="container">
+                <a class="btn btn-white btn-sm float-right" onclick="cardapio.metodos.abrirCarrinho(false)">Fechar</a>
+                <div class="etapas">
+                    <div class="etapa etapa1 active">1</div>
+                    <div class="etapa etapa2">2</div>
+                    <div class="etapa etapa3">3</div>
+                </div>
+                <p class="title-carrinho mt-4">
+                    <b id="lblTituloEtapa">Seu carrinho:</b>
+                    <b id="container-itens-carrinho"> (
+                        <span id="qtd-itens-carrinho">0</span>
+                        <span id="txt-qtd-itens-carrinho"></span>
+                        )
+                    </b>
+                </p>
+            </div>
+        </div>
+
+        <div class="m-body">
+            <div class="container">
+                <div id="itensCarrinho" class="ml-0 mr-0 animated hidden">
+
+                    <!--AQUI SERÃO GERADOS OS ITENS DO CARRINHO-->
+
+
+                </div>
+
+                <div id="localEntrega" class="row mr-0 ml-0 animated fadeIn hidden">
+                    <div class="col-12 col-lg-4 col-md-4 col-sm-12">
+                        <div class="form-group">
+                            <label for="txtNome">Seu Nome:</label>
+                            <input id="txtNome" type="text" class="form-control"
+                                onkeyup="cardapio.metodos.titleize(this)">
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-4 col-sm-12">
+                        <div class="form-group container-cep">
+                            <label for="txtCEP">CEP:</label>
+                            <input id="txtCEP" type="text" class="form-control"
+                                onkeyup="cardapio.metodos.mascaraCep(event)" maxlength="9" />
+                            <a class="btn btn-purple btn-sm" onclick="cardapio.metodos.buscarCep()"><i
+                                    class="fas fa-search"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-8 no-mobile"></div>
+
+                    <div class="col-12 col-lg-6 col-md-6 col-sm-12">
+                        <div class="form-group">
+                            <label for="txtEndereco">Endereço:</label>
+                            <input id="txtEndereco" type="text" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-4 col-sm-12">
+                        <div class="form-group">
+                            <label for="txtBairro">Bairro:</label>
+                            <input id="txtBairro" type="text" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-2 col-md-2 col-sm-12">
+                        <div class="form-group">
+                            <label for="txtNumero">Número:</label>
+                            <input id="txtNumero" type="text" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-6 col-md-6 col-sm-12">
+                        <div class="form-group">
+                            <label for="txtCidade">Cidade:</label>
+                            <input id="txtCidade" type="text" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-4 col-sm-12">
+                        <div class="form-group">
+                            <label for="txtComplemento">Complemento:</label>
+                            <input id="txtComplemento" type="text" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-2 col-md-2 col-sm-12">
+                        <div class="form-group">
+                            <label for="ddlUf">UF:</label>
+                            <select id="ddlUf" class="form-control">
+                                <option value="-1">...</option>
+                                <option value="MG">MG</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div id="resumoCarrinho" class="row mr-0 ml-0 animated fadeIn hidden">
+
+                    <div class="col-12">
+                        <p class="title-carrinho mt-4">
+                            <b>Local da Entrega:</b>
+                        </p>
+                    </div>
+
+                    <div class="col-12 endereco resumo">
+                        <div class="img-map">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+
+                        <div class="dados-produto">
+                            <p class="texto-endereco">
+                                <b id="resumoEndereco"></b>
+                            </p>
+                            <p class="cidade-endereco" id="cidadeEndereco">
+
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="col-12">
+                        <p class="title-carrinho mt-4">
+                            <b>Itens do pedido:</b>
+                        </p>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="row" id="listaItensResumo">
+
+                            <!--AQUI SERÃO GERADOS OS ITENS DO CARRINHO JÁ PERSONALIZADOS EM FORMA DE RESUMO-->
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="m-footer">
+            <div class="container">
+
+                <div class="container-total text-right mb-4">
+                    <p class="mb-0 texto-total">
+                        <span><b>Total (Sem a taxa de Entrega): </b></span><br>
+                        <b><span class="valor-total" id="lblValorTotal">R$ 0,00</b></span>
+                    </p>
+
+                </div>
+
+                <a onclick="cardapio.metodos.carregarEndereco();" class="btn btn-purple float-right hidden"
+                    id="btnEtapaPedido">
+                    Continuar
+                </a>
+
+
+                <a onclick="cardapio.metodos.abrirCarrinho(false);" class="btn btn-white float-right mr-3"
+                    id="btnSairCarrinho">
+                    Fechar
+                </a>
+
+                <a onclick="cardapio.metodos.resumoPedido()" class="btn btn-purple float-right hidden"
+                    id="btnEtapaEndereco">
+                    Revisar Pedido
+                </a>
+
+                <a href="#" class="btn btn-purple float-right" id="btnEtapaResumo" target="_blank">
+                    Enviar Pedido
+                </a>
+
+                <a onclick="cardapio.metodos.voltarEtapa();" class="btn btn-white float-right mr-3" id="btnEtapaVoltar">
+                    Voltar
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="./js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="./js/modernizr-3.5.0.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/popper.min.js"></script>
+    <script type="text/javascript" src="./js/wow.min.js"></script>
+    <script type="text/javascript" src="./js/dados.js" id="dados"></script>
+    <script type="text/javascript" src="./js/app.js" id="appId"></script>
+
+    <script>new WOW().init();</script>
+
+</body>
+
+</html>
